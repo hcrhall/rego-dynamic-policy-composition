@@ -12,13 +12,11 @@ import input as tfplan
 # - email: mailme@example.com
 # organizations:
 # - HashiCorp
-main[msg] {
-    # print(types)
-    # msg := data.terraform.policies.rule
-    msg := {
-        rego.metadata.rule().title : {
-            "description": rego.metadata.rule().description,
-            "violations": data.terraform.policies.rule
-        }
-    }
+main[outcome] {
+	# print(types)
+	# msg := data.terraform.policies.rule
+	outcome := {rego.metadata.rule().title: {
+		"description": rego.metadata.rule().description,
+		"violations": data.terraform.policies.rule,
+	}}
 }
