@@ -1,7 +1,5 @@
 package terraform.main
 
-import input as tfplan
-
 # METADATA
 # title: FWS-SEC-001
 # description: Ensure that all resources that have been created using the Terraform "Fake Web Services" Provider are compliant.
