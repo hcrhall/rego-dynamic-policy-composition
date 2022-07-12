@@ -23,7 +23,6 @@ all_database_size_violations := [ resources |
 ]
 
 # METADATA
-# scope: rule
 # title: FWS-DB-001
 # description: Ensure that all databases are sized accordingly
 # custom:

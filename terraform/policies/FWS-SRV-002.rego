@@ -28,7 +28,6 @@ all_server_vpc_violations := [ resources |
 ]
 
 # METADATA
-# scope: rule
 # title: FWS-SRV-002
 # description: Ensure that servers are connected to the 'Primary VPC' network
 # enforcement_level: advise

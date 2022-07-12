@@ -28,7 +28,6 @@ all_server_type_violations := [ resources |
 ]
 
 # METADATA
-# scope: rule
 # title: FWS-SRV-001
 # description: Ensure that only allowed server type values are defined
 # custom:
