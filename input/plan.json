@@ -1,0 +1,1133 @@
+{
+    "format_version": "1.0",
+    "terraform_version": "1.1.7",
+    "variables": {
+        "fake_token": {
+            "value": "$TOKEN"
+        },
+        "fws_hostname": {
+            "value": "20"
+        },
+        "server_count": {
+            "value": "20"
+        }
+    },
+    "planned_values": {
+        "root_module": {
+            "resources": [
+                {
+                    "address": "fakewebservices_database.database",
+                    "mode": "managed",
+                    "type": "fakewebservices_database",
+                    "name": "database",
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Production DB",
+                        "size": 256
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_load_balancer.load_balancer",
+                    "mode": "managed",
+                    "type": "fakewebservices_load_balancer",
+                    "name": "load_balancer",
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Primary Load Balancer",
+                        "servers": [
+                            "Server 1",
+                            "Server 10",
+                            "Server 11",
+                            "Server 12",
+                            "Server 13",
+                            "Server 14",
+                            "Server 15",
+                            "Server 16",
+                            "Server 17",
+                            "Server 18",
+                            "Server 19",
+                            "Server 2",
+                            "Server 20",
+                            "Server 3",
+                            "Server 4",
+                            "Server 5",
+                            "Server 6",
+                            "Server 7",
+                            "Server 8",
+                            "Server 9"
+                        ]
+                    },
+                    "sensitive_values": {
+                        "servers": [
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false,
+                            false
+                        ]
+                    }
+                },
+                {
+                    "address": "fakewebservices_server.server[0]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 0,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 1",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[10]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 10,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 11",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[11]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 11,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 12",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[12]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 12,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 13",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[13]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 13,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 14",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[14]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 14,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 15",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[15]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 15,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 16",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[16]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 16,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 17",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[17]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 17,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 18",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[18]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 18,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 19",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[19]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 19,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 20",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[1]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 1,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 2",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[2]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 2,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 3",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[3]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 3,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 4",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[4]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 4,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 5",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[5]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 5,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 6",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[6]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 6,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 7",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[7]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 7,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 8",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[8]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 8,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 9",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_server.server[9]",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "index": 9,
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "name": "Server 10",
+                        "type": "t2.micro",
+                        "vpc": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                },
+                {
+                    "address": "fakewebservices_vpc.vpc",
+                    "mode": "managed",
+                    "type": "fakewebservices_vpc",
+                    "name": "vpc",
+                    "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+                    "schema_version": 0,
+                    "values": {
+                        "cidr_block": "0.0.0.0/1",
+                        "name": "Primary VPC"
+                    },
+                    "sensitive_values": {}
+                }
+            ]
+        }
+    },
+    "resource_changes": [
+        {
+            "address": "fakewebservices_database.database",
+            "mode": "managed",
+            "type": "fakewebservices_database",
+            "name": "database",
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Production DB",
+                    "size": 256
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_load_balancer.load_balancer",
+            "mode": "managed",
+            "type": "fakewebservices_load_balancer",
+            "name": "load_balancer",
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Primary Load Balancer",
+                    "servers": [
+                        "Server 1",
+                        "Server 10",
+                        "Server 11",
+                        "Server 12",
+                        "Server 13",
+                        "Server 14",
+                        "Server 15",
+                        "Server 16",
+                        "Server 17",
+                        "Server 18",
+                        "Server 19",
+                        "Server 2",
+                        "Server 20",
+                        "Server 3",
+                        "Server 4",
+                        "Server 5",
+                        "Server 6",
+                        "Server 7",
+                        "Server 8",
+                        "Server 9"
+                    ]
+                },
+                "after_unknown": {
+                    "id": true,
+                    "servers": [
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false
+                    ]
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "servers": [
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false
+                    ]
+                }
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[0]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 0,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 1",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[10]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 10,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 11",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[11]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 11,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 12",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[12]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 12,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 13",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[13]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 13,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 14",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[14]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 14,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 15",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[15]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 15,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 16",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[16]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 16,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 17",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[17]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 17,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 18",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[18]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 18,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 19",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[19]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 19,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 20",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[1]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 1,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 2",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[2]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 2,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 3",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[3]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 3,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 4",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[4]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 4,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 5",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[5]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 5,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 6",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[6]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 6,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 7",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[7]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 7,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 8",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[8]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 8,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 9",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_server.server[9]",
+            "mode": "managed",
+            "type": "fakewebservices_server",
+            "name": "server",
+            "index": 9,
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "name": "Server 10",
+                    "type": "t2.micro",
+                    "vpc": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        },
+        {
+            "address": "fakewebservices_vpc.vpc",
+            "mode": "managed",
+            "type": "fakewebservices_vpc",
+            "name": "vpc",
+            "provider_name": "registry.terraform.io/hashicorp/fakewebservices",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "cidr_block": "0.0.0.0/1",
+                    "name": "Primary VPC"
+                },
+                "after_unknown": {
+                    "id": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {}
+            }
+        }
+    ],
+    "configuration": {
+        "provider_config": {
+            "fakewebservices": {
+                "name": "fakewebservices",
+                "version_constraint": "0.2.1",
+                "expressions": {
+                    "hostname": {
+                        "references": [
+                            "var.fws_hostname"
+                        ]
+                    },
+                    "token": {
+                        "references": [
+                            "var.fake_token"
+                        ]
+                    }
+                }
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "fakewebservices_database.database",
+                    "mode": "managed",
+                    "type": "fakewebservices_database",
+                    "name": "database",
+                    "provider_config_key": "fakewebservices",
+                    "expressions": {
+                        "name": {
+                            "constant_value": "Production DB"
+                        },
+                        "size": {
+                            "constant_value": 256
+                        }
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "fakewebservices_load_balancer.load_balancer",
+                    "mode": "managed",
+                    "type": "fakewebservices_load_balancer",
+                    "name": "load_balancer",
+                    "provider_config_key": "fakewebservices",
+                    "expressions": {
+                        "name": {
+                            "constant_value": "Primary Load Balancer"
+                        },
+                        "servers": {
+                            "references": [
+                                "fakewebservices_server.server"
+                            ]
+                        }
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "fakewebservices_server.server",
+                    "mode": "managed",
+                    "type": "fakewebservices_server",
+                    "name": "server",
+                    "provider_config_key": "fakewebservices",
+                    "expressions": {
+                        "name": {
+                            "references": [
+                                "count.index"
+                            ]
+                        },
+                        "type": {
+                            "constant_value": "t2.micro"
+                        },
+                        "vpc": {
+                            "references": [
+                                "fakewebservices_vpc.vpc.name",
+                                "fakewebservices_vpc.vpc"
+                            ]
+                        }
+                    },
+                    "schema_version": 0,
+                    "count_expression": {
+                        "references": [
+                            "var.server_count"
+                        ]
+                    }
+                },
+                {
+                    "address": "fakewebservices_vpc.vpc",
+                    "mode": "managed",
+                    "type": "fakewebservices_vpc",
+                    "name": "vpc",
+                    "provider_config_key": "fakewebservices",
+                    "expressions": {
+                        "cidr_block": {
+                            "constant_value": "0.0.0.0/1"
+                        },
+                        "name": {
+                            "constant_value": "Primary VPC"
+                        }
+                    },
+                    "schema_version": 0
+                }
+            ],
+            "variables": {
+                "fake_token": {
+                    "description": "The Terraform Cloud/Enterprise user/team token that will be used in the provider configuration block.",
+                    "sensitive": true
+                },
+                "fws_hostname": {
+                    "description": "The Terraform Cloud/Enterprise hostname that will be used in the provider configuration block."
+                },
+                "server_count": {
+                    "description": "The number of fakewebservices_server resources that will get provisioned."
+                }
+            }
+        }
+    }
+}
