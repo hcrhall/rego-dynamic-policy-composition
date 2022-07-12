@@ -13,8 +13,6 @@ import input as tfplan
 # organizations:
 # - HashiCorp
 main[outcome] {
-	# print(types)
-	# msg := data.terraform.policies.rule
 	outcome := {rego.metadata.rule().title: {
 		"description": rego.metadata.rule().description,
 		"violations": data.terraform.policies.rule,
