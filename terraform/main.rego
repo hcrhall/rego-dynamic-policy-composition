@@ -2,7 +2,7 @@ package terraform.main
 
 # METADATA
 # title: FWS-SEC-001
-# description: Ensure that all resources that have been created using the Terraform "Fake Web Services" Provider are compliant.
+# description: Ensure that all resources that have been created using the Terraform 'Fake Web Services' Provider are compliant.
 # related_resources:
 # - ref: https://github.com/hashicorp/terraform-provider-fakewebservices
 # authors:
@@ -11,8 +11,10 @@ package terraform.main
 # organizations:
 # - HashiCorp
 main[outcome] {
-	outcome := {rego.metadata.rule().title: {
-		"description": rego.metadata.rule().description,
-		"violations": data.terraform.policies.rule,
-	}}
+	outcome := {
+        rego.metadata.rule().title: {
+		    "description": rego.metadata.rule().description,
+		    "violations": data.terraform.policies.rule,
+	    }
+    }
 }

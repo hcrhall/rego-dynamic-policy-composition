@@ -22,17 +22,16 @@ all_servers := [resource_changes |
 	resource_changes.change.actions in valid_actions
 ]
 
-all_server_vpc_violations := [resources |
+all_server_type_violations := [resources |
 	resources := all_servers[_]
-	not resources.change.after.vpc == "Primary VPC"
+	not resources.change.after.type in allowed_server_types
 ]
 
 # METADATA
-# title: FWS-SRV-002
-# description: Ensure that servers are connected to the 'Primary VPC' network
-# enforcement_level: advise
+# title: FWS-SRV-001
+# description: Ensure that only allowed server type values are defined
 # custom:
-#  severity: high
+#  severity: medium
 #  enforcement_level: mandatory
 # related_resources:
 # - ref: https://github.com/hcrhall/rego-dynamic-policy-composition/
@@ -41,12 +40,16 @@ all_server_vpc_violations := [resources |
 # - email: mailme@example.com
 # organizations:
 # - HashiCorp
-rule[outcome] {
-	count(all_server_vpc_violations) != 0
-	outcome := {
+rule[result] {
+	count(all_server_type_violations) != 0
+	result := {
 		"policy": rego.metadata.rule().title,
 		"description": rego.metadata.rule().description,
 		"severity": rego.metadata.rule().custom.severity,
 		"enforcement_level": rego.metadata.rule().custom.enforcement_level,
+		"violations": {
+			"count": count(all_server_type_violations),
+			"resources": all_server_type_violations[_].address,
+		},
 	}
 }

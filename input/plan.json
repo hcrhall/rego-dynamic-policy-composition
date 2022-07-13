@@ -527,7 +527,7 @@
                 "after": {
                     "name": "Server 1",
                     "type": "t2.micro",
-                    "vpc": "Primary VPC"
+                    "vpc": "Secondary VPC"
                 },
                 "after_unknown": {
                     "id": true
@@ -551,7 +551,7 @@
                 "after": {
                     "name": "Server 11",
                     "type": "t2.micro",
-                    "vpc": "Primary VPC"
+                    "vpc": "Secondary VPC"
                 },
                 "after_unknown": {
                     "id": true
