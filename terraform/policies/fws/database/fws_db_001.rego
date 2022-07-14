@@ -1,26 +1,31 @@
-package terraform.policies
+package terraform.fws_db_001
 
 import future.keywords.in
 import input as tfplan
 
-valid_actions := [
+actions := [
 	["no-op"],
 	["create"],
 	["update"],
 ]
 
-allowed_database_size := 128
+db_size := 128
 
-all_databases := [resource_changes |
+resources := [resource_changes |
 	resource_changes := tfplan.resource_changes[_]
 	resource_changes.type == "fakewebservices_database"
 	resource_changes.mode == "managed"
+	resource_changes.change.actions in actions
 ]
 
-all_database_size_violations := [resources |
-	resources := all_databases[_]
-	not resources.change.after.size == allowed_database_size
+violations := [resource |
+	resource := resources[_]
+	not resource.change.after.size == db_size
 ]
+
+violators[address] {
+	address := violations[_].address
+}
 
 # METADATA
 # title: FWS-DB-001
@@ -36,15 +41,15 @@ all_database_size_violations := [resources |
 # organizations:
 # - HashiCorp
 rule[result] {
-	count(all_database_size_violations) != 0
+	count(violations) != 0
 	result := {
 		"policy": rego.metadata.rule().title,
 		"description": rego.metadata.rule().description,
 		"severity": rego.metadata.rule().custom.severity,
 		"enforcement_level": rego.metadata.rule().custom.enforcement_level,
-		"violations": {
-			"count": count(all_database_size_violations),
-			"resources": all_database_size_violations[_].address,
+		"resources": {
+			"count": count(violations),
+			"addresses": violators,
 		},
 	}
 }

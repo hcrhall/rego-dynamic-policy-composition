@@ -1,31 +1,35 @@
-package terraform.policies
+package terraform.fws_srv_001
 
 import future.keywords.in
 import input as tfplan
 
-valid_actions := [
+actions := [
 	["no-op"],
 	["create"],
 	["update"],
 ]
 
-allowed_server_types := [
+types := [
 	"t2.small",
 	"t2.medium",
 	"t2.large",
 ]
 
-all_servers := [resource_changes |
+resources := [resource_changes |
 	resource_changes := tfplan.resource_changes[_]
 	resource_changes.type == "fakewebservices_server"
 	resource_changes.mode == "managed"
-	resource_changes.change.actions in valid_actions
+	resource_changes.change.actions in actions
 ]
 
-all_server_type_violations := [resources |
-	resources := all_servers[_]
-	not resources.change.after.type in allowed_server_types
+violations := [resource |
+	resource := resources[_]
+	not resource.change.after.type in types
 ]
+
+violators[address] {
+	address := violations[_].address
+}
 
 # METADATA
 # title: FWS-SRV-001
@@ -41,15 +45,15 @@ all_server_type_violations := [resources |
 # organizations:
 # - HashiCorp
 rule[result] {
-	count(all_server_type_violations) != 0
+	count(violations) != 0
 	result := {
 		"policy": rego.metadata.rule().title,
 		"description": rego.metadata.rule().description,
 		"severity": rego.metadata.rule().custom.severity,
 		"enforcement_level": rego.metadata.rule().custom.enforcement_level,
-		"violations": {
-			"count": count(all_server_type_violations),
-			"resources": all_server_type_violations[_].address,
+		"resources": {
+			"count": count(violations),
+			"addresses": violators,
 		},
 	}
 }
