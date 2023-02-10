@@ -1,0 +1,6 @@
+{
+    "id": "srv001",
+    "description": "Ensure that only allowed server type values are defined",
+    "severity": "High",
+    "enforcement_level": "mandatory"
+}

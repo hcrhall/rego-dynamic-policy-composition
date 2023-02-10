@@ -1,0 +1,6 @@
+{
+    "id": "db001",
+    "description": "Ensure that all databases are sized accordingly",
+    "severity": "High",
+    "enforcement_level": "mandatory"
+}

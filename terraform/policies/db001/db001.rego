@@ -1,7 +1,8 @@
-package terraform.fws_srv_001
+package policies.db001
 
+import data.metadata.db001 as policy
 import future.keywords.in
-import input as tfplan
+import input.plan as tfplan
 
 actions := [
 	["no-op"],
@@ -9,22 +10,18 @@ actions := [
 	["update"],
 ]
 
-types := [
-	"t2.small",
-	"t2.medium",
-	"t2.large",
-]
+db_size := 128
 
 resources := [resource_changes |
 	resource_changes := tfplan.resource_changes[_]
-	resource_changes.type == "fakewebservices_server"
+	resource_changes.type == "fakewebservices_database"
 	resource_changes.mode == "managed"
 	resource_changes.change.actions in actions
 ]
 
 violations := [resource |
 	resource := resources[_]
-	not resource.change.after.type in types
+	not resource.change.after.size == db_size
 ]
 
 violators[address] {
@@ -32,10 +29,10 @@ violators[address] {
 }
 
 # METADATA
-# title: FWS-SRV-001
-# description: Ensure that only allowed server type values are defined
+# title: DB001
+# description: Ensure that all databases are sized accordingly
 # custom:
-#  severity: medium
+#  severity: high
 #  enforcement_level: mandatory
 # related_resources:
 # - ref: https://github.com/hcrhall/rego-dynamic-policy-composition/
@@ -47,10 +44,10 @@ violators[address] {
 rule[result] {
 	count(violations) != 0
 	result := {
-		"policy": rego.metadata.rule().title,
-		"description": rego.metadata.rule().description,
-		"severity": rego.metadata.rule().custom.severity,
-		"enforcement_level": rego.metadata.rule().custom.enforcement_level,
+		"policy": policy.id,
+		"description": policy.description,
+		"severity": policy.severity,
+		"enforcement_level": policy.enforcement_level,
 		"resources": {
 			"count": count(violations),
 			"addresses": violators,

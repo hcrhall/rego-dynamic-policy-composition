@@ -1,0 +1,6 @@
+{
+    "id": "srv002",
+    "description": "Ensure that servers are connected to the 'Primary VPC' network",
+    "severity": "High",
+    "enforcement_level": "mandatory"
+}

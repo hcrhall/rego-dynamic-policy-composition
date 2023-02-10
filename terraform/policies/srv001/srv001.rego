@@ -1,7 +1,7 @@
-package terraform.fws_db_001
+package policies.srv001
 
 import future.keywords.in
-import input as tfplan
+import input.plan as tfplan
 
 actions := [
 	["no-op"],
@@ -9,18 +9,22 @@ actions := [
 	["update"],
 ]
 
-db_size := 128
+types := [
+	"t2.small",
+	"t2.medium",
+	"t2.large",
+]
 
 resources := [resource_changes |
 	resource_changes := tfplan.resource_changes[_]
-	resource_changes.type == "fakewebservices_database"
+	resource_changes.type == "fakewebservices_server"
 	resource_changes.mode == "managed"
 	resource_changes.change.actions in actions
 ]
 
 violations := [resource |
 	resource := resources[_]
-	not resource.change.after.size == db_size
+	not resource.change.after.type in types
 ]
 
 violators[address] {
@@ -28,10 +32,10 @@ violators[address] {
 }
 
 # METADATA
-# title: FWS-DB-001
-# description: Ensure that all databases are sized accordingly
+# title: SRV001
+# description: Ensure that only allowed server type values are defined
 # custom:
-#  severity: high
+#  severity: medium
 #  enforcement_level: mandatory
 # related_resources:
 # - ref: https://github.com/hcrhall/rego-dynamic-policy-composition/

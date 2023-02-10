@@ -1,19 +1,19 @@
-package terraform.main
+package terraform
 
 policies := [
-    "fws_srv_001",
-    "fws_srv_002",
-    "fws_db_001",
+	"srv001",
+	"srv002",
+	"db001",
 ]
 
 results[result] {
-    some i
-    policy := policies[i]
-    result := data.terraform[policy].rule
+	some i
+	policy := policies[i]
+	result := data.policies[policy].rule
 }
 
 # METADATA
-# title: FWS-SEC-001
+# title: SEC001
 # description: Ensure that all resources that have been created using the Terraform 'Fake Web Services' Provider are compliant.
 # related_resources:
 # - ref: https://github.com/hashicorp/terraform-provider-fakewebservices
@@ -22,9 +22,4 @@ results[result] {
 # - email: mailme@example.com
 # organizations:
 # - HashiCorp
-main[outcome] {
-	outcome := {rego.metadata.rule().title: {
-		"description": rego.metadata.rule().description,
-		"results": results,
-	}}
-}
+main := results

@@ -1,7 +1,7 @@
-package terraform.fws_srv_002
+package policies.srv002
 
 import future.keywords.in
-import input as tfplan
+import input.plan as tfplan
 
 actions := [
 	["no-op"],
@@ -26,7 +26,7 @@ violators[address] {
 }
 
 # METADATA
-# title: FWS-SRV-002
+# title: SRV002
 # description: Ensure that servers are connected to the 'Primary VPC' network
 # enforcement_level: advise
 # custom:
